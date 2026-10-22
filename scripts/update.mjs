@@ -332,7 +332,12 @@ async function gather() {
 }
 
 function withArt(stories) {
-  return stories.map((story) => ({ ...story, image: plateFor(story) }));
+  return stories.map((story) => {
+    if (typeof story.image === "string" && /^media\/stories\/[a-z0-9-]+\.jpg$/.test(story.image)) {
+      return story;
+    }
+    return { ...story, image: plateFor(story) };
+  });
 }
 
 async function writeDesk(stories, options = {}) {
@@ -384,6 +389,17 @@ function selfTest() {
   if (plateFor({ id: "quiet", kicker: "QUIET", mockHeadline: "Nothing topical", mockDek: "Just a joke.", originalTitle: "Hello" }) !== quiet) {
     throw new Error("plate pick drifted");
   }
+  const kept = withArt([{
+    id: "quiet",
+    image: "media/stories/quiet.jpg",
+    kicker: "debate",
+    mockHeadline: "debate",
+    mockDek: "debate",
+    originalTitle: "debate",
+  }]);
+  if (kept[0].image !== "media/stories/quiet.jpg") throw new Error("custom still overwritten");
+  const stamped = withArt([{ id: "podium", kicker: "PODIUM", mockHeadline: "Two podiums", mockDek: "A debate.", originalTitle: "debate" }]);
+  if (stamped[0].image !== "media/plates/debate.jpg") throw new Error(`stamp failed: ${stamped[0].image}`);
   console.log("self-test ok");
 }
 

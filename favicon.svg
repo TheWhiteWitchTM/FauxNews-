@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" fill="#c20017"/>
-  <g fill="#fff" opacity="0.38">
-    <polygon points="16,34 1,-4 6,-4"/>
-    <polygon points="16,34 8,-4 12,-4"/>
-    <polygon points="16,34 14,-4 18,-4"/>
-    <polygon points="16,34 20,-4 25,-4"/>
-    <polygon points="16,34 26,-4 31,-4"/>
+  <g fill="#fff">
+    <polygon points="16,34 1,-4 5,-4" opacity=".35"/>
+    <polygon points="16,34 7,-4 11,-4" opacity=".55"/>
+    <polygon points="16,34 13,-4 19,-4" opacity=".8"/>
+    <polygon points="16,34 21,-4 26,-4" opacity=".5"/>
+    <polygon points="16,34 27,-4 32,-4" opacity=".3"/>
   </g>
-  <text x="16" y="22" text-anchor="middle" fill="#fff" font-family="Arial Narrow, Impact, sans-serif" font-style="italic" font-weight="700" font-size="14">F</text>
+  <text x="16" y="22" text-anchor="middle" fill="#fff" font-family="Arial Narrow, Impact, sans-serif" font-style="italic" font-weight="700" font-size="15">F</text>
 </svg>

@@ -72,7 +72,21 @@ function originalLink(story, label) {
 }
 
 function safeImage(value) {
-  return typeof value === "string" && /^media\/plates\/[a-z0-9-]+\.jpg$/.test(value);
+  return typeof value === "string" && /^media\/(?:plates|stories)\/[a-z0-9-]+\.jpg$/.test(value);
+}
+
+function onArticlePage() {
+  return document.body.dataset.page === "article";
+}
+
+function storyHref(story) {
+  return `article.html?id=${encodeURIComponent(story.id)}`;
+}
+
+function storyLink(story, className) {
+  const link = el("a", className);
+  link.href = storyHref(story);
+  return link;
 }
 
 function packOf(story) {
@@ -96,9 +110,10 @@ function media(story, hero) {
     node.classList.add("has-photo");
     const img = document.createElement("img");
     img.className = "still-photo";
-    img.alt = "";
+    img.alt = story.kicker ? `Parody still, ${story.kicker}` : "Parody still";
     img.src = story.image;
-    img.style.objectPosition = focusOf(story);
+    img.style.objectPosition = story.image.startsWith("media/stories/") ? "center" : focusOf(story);
+    if (!hero) img.loading = "lazy";
     node.append(img);
   } else {
     const still = el("div", `still ${hero ? "pack-hero" : packOf(story)}`);
@@ -116,14 +131,14 @@ function media(story, hero) {
 }
 
 function linkedMedia(story, hero) {
-  const link = linkTo(story, "media-link");
+  const link = storyLink(story, "media-link");
   link.setAttribute("aria-label", story.mockHeadline);
   link.append(media(story, hero));
   return link;
 }
 
 function headlineLink(story, className = "hed") {
-  const link = linkTo(story, className);
+  const link = storyLink(story, className);
   link.textContent = story.mockHeadline;
   return link;
 }
@@ -246,7 +261,7 @@ function renderLatest(stories) {
   }
   for (const story of stories) {
     const item = el("li");
-    const link = linkTo(story, "latest-link");
+    const link = storyLink(story, "latest-link");
     link.append(media(story));
     const copy = el("span");
     copy.append(el("span", "latest-hed", story.mockHeadline));
@@ -261,16 +276,26 @@ function renderChips() {
   const nav = $("chips");
   nav.replaceChildren();
   const desks = [
-    { id: "all", short: "All", name: "All wires" },
-    ...state.sources.map((source) => ({ id: source.id, short: source.short, name: source.name })),
+    { id: "all", short: "All", name: "All wires", color: "#003366" },
+    ...state.sources.map((source) => ({
+      id: source.id,
+      short: source.short,
+      name: source.name,
+      color: source.color,
+    })),
   ];
   for (const desk of desks) {
     const button = el("button", "chip", desk.short);
     button.type = "button";
     button.dataset.desk = desk.id;
+    if (desk.color) button.style.setProperty("--chip", desk.color);
     button.title = desk.name;
     button.setAttribute("aria-pressed", String(state.desk === desk.id));
     button.addEventListener("click", () => {
+      if (onArticlePage()) {
+        location.href = desk.id === "all" ? "./" : `./?desk=${encodeURIComponent(desk.id)}`;
+        return;
+      }
       state.desk = desk.id;
       const url = new URL(location.href);
       if (desk.id === "all") url.searchParams.delete("desk");
@@ -316,10 +341,84 @@ function renderBreaking(story) {
     return;
   }
   bar.hidden = false;
-  bar.append(el("span", "breaking-tag", "Breaking mock"));
-  const link = linkTo(story, "breaking-link");
+  bar.append(el("span", "breaking-tag", "Breaking News"));
+  const link = storyLink(story, "breaking-link");
   link.textContent = `${story.kicker} — ${story.mockHeadline}`;
   bar.append(link);
+}
+
+function renderArticle() {
+  const main = $("story");
+  const id = new URLSearchParams(location.search).get("id");
+  const story = state.stories.find((item) => item.id === id);
+  renderBreaking(state.stories[0]);
+  main.replaceChildren();
+  if (!story) {
+    document.title = "Story not on the desk — FAUX NEWS";
+    main.append(el("p", "empty", "That story is not on the desk."));
+    const back = el("a", "original-link", "Back to the front page");
+    back.href = "./";
+    main.append(back);
+    renderLatest(state.stories.slice(0, 8));
+    return;
+  }
+  document.title = `${story.mockHeadline} — FAUX NEWS`;
+  const source = sourceOf(story.sourceId);
+  const crumb = el("p", "article-crumb");
+  const home = el("a", null, "Home");
+  home.href = "./";
+  crumb.append(home, document.createTextNode(" / "), el("span", null, source.name));
+  main.append(crumb);
+  main.append(el("p", "article-kicker", story.kicker || "Wire"));
+  main.append(el("h1", "article-title", story.mockHeadline));
+  const by = el("p", "article-by");
+  const time = el("time", null, when(story.publishedAt));
+  time.dateTime = story.publishedAt || "";
+  by.append(el("span", "article-author", "FauxGrok"));
+  by.append(time);
+  by.append(el("span", null, story.source));
+  main.append(by);
+  main.append(el("p", "article-dek", story.mockDek));
+  if (safeImage(story.image)) {
+    const figure = el("figure", "article-figure");
+    const img = document.createElement("img");
+    img.src = story.image;
+    img.alt = story.kicker ? `Parody still, ${story.kicker}` : "Parody still";
+    figure.append(img);
+    figure.append(el("figcaption", null, "Parody still. Not a photograph from the outlet."));
+    main.append(figure);
+  }
+  const wrote = el("p", "original article-original");
+  wrote.append(el("span", null, "They wrote"));
+  wrote.append(document.createTextNode(story.originalTitle));
+  main.append(wrote);
+  const out = originalLink(story, "Read their story");
+  out.classList.add("article-out");
+  main.append(out);
+  const sameWire = state.stories.filter((item) => item.id !== story.id && item.sourceId === story.sourceId);
+  const more = (sameWire.length ? sameWire : state.stories.filter((item) => item.id !== story.id)).slice(0, 4);
+  if (more.length) {
+    const block = el("section", "article-more");
+    block.append(el("h2", null, "More from the desk"));
+    const list = el("ul", "article-related");
+    for (const item of more) {
+      const li = el("li");
+      const row = storyLink(item, "more-row");
+      if (safeImage(item.image)) {
+        const thumb = document.createElement("img");
+        thumb.src = item.image;
+        thumb.alt = "";
+        thumb.loading = "lazy";
+        row.append(thumb);
+      }
+      row.append(el("span", null, item.mockHeadline));
+      li.append(row);
+      list.append(li);
+    }
+    block.append(list);
+    main.append(block);
+  }
+  renderLatest(state.stories.filter((item) => item.id !== story.id).slice(0, 8));
 }
 
 function render() {
@@ -342,14 +441,36 @@ function render() {
 }
 
 function paintClock() {
-  const clock = $("clock");
-  if (!clock) return;
+  const nodes = document.querySelectorAll(".js-clock");
+  if (!nodes.length) return;
   const time = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
     timeZone: "America/New_York",
   });
-  clock.textContent = time.replace(/\s/g, "").toLowerCase();
+  const label = time.replace(/\s*(AM|PM)$/i, (_, ampm) => " " + ampm.toUpperCase());
+  for (const node of nodes) node.textContent = label;
+}
+
+function bindMenu() {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const sectionMenu = $("section-menu");
+  if (!menuToggle || !sectionMenu) return;
+  const label = menuToggle.querySelector(".menu-toggle-label");
+  const setOpen = (open) => {
+    sectionMenu.classList.toggle("is-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    if (label) label.textContent = open ? "Close" : "Menu";
+  };
+  menuToggle.addEventListener("click", () => {
+    setOpen(!sectionMenu.classList.contains("is-open"));
+  });
+  sectionMenu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setOpen(false);
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1100) setOpen(false);
+  });
 }
 
 async function load() {
@@ -374,10 +495,12 @@ async function load() {
     : "Desk copy loaded";
   renderSources();
   renderChips();
-  render();
+  if (onArticlePage()) renderArticle();
+  else render();
 }
 
 $("q").addEventListener("input", (event) => {
+  if (onArticlePage()) return;
   state.query = event.target.value;
   const url = new URL(location.href);
   if (state.query) url.searchParams.set("q", state.query);
@@ -386,10 +509,19 @@ $("q").addEventListener("input", (event) => {
   render();
 });
 
+$("q").addEventListener("keydown", (event) => {
+  if (!onArticlePage() || event.key !== "Enter") return;
+  const query = event.target.value.trim();
+  location.href = query ? `./?q=${encodeURIComponent(query)}` : "./";
+});
+
 paintClock();
 setInterval(paintClock, 30000);
+bindMenu();
 
 load().catch((error) => {
-  $("status").textContent = "The desk copy did not load.";
-  $("hero").replaceChildren(el("p", "empty", error.message));
+  const status = $("status");
+  if (status) status.textContent = "The desk copy did not load.";
+  const slot = $("hero") || $("story");
+  if (slot) slot.replaceChildren(el("p", "empty", error.message));
 });

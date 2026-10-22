@@ -14,12 +14,12 @@
       "kicker": "CLIP SHIFT",
       "mockHeadline": "\"Not to my knowledge\" clocks in for another full shift on the homepage",
       "mockDek": "The Gateway Pundit has the question, the shrug, and a VIDEO tag. The rumor stays in the chyron. The answer, such as it is, gets a parking spot.",
-      "originalTitle": "(VIDEO) Trump Responds to Ilhan Omar Saying “Not to My Knowledge” When Asked if She Married Her Brother",
+      "originalTitle": "(VIDEO) Trump Responds to Ilhan Omar Saying \u201cNot to My Knowledge\u201d When Asked if She Married Her Brother",
       "url": "https://www.thegatewaypundit.com/2026/10/video-trump-responds-ilhan-omar-saying-not-my/",
       "publishedAt": "2026-10-22T04:20:32.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/mic.jpg"
+      "image": "media/stories/gwomarshrug.jpg"
     },
     {
       "id": "gwboomliar",
@@ -28,12 +28,12 @@
       "kicker": "BOOM",
       "mockHeadline": "Someone said \"liar\" on a stage, so the homepage added explosives",
       "mockDek": "The Gateway Pundit files a debate insult as ordnance, plus a play button. BOOM is doing the reporting.",
-      "originalTitle": "BOOM! Mike Rogers Calls Abdul El-Sayed a LIAR to His Face During Debate ‘This is a Pattern’ (VIDEO)",
+      "originalTitle": "BOOM! Mike Rogers Calls Abdul El-Sayed a LIAR to His Face During Debate \u2018This is a Pattern\u2019 (VIDEO)",
       "url": "https://www.thegatewaypundit.com/2026/10/boom-mike-rogers-calls-abdul-el-sayed-liar/",
       "publishedAt": "2026-10-22T03:40:39.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/mic.jpg"
+      "image": "media/stories/gwboomliar.jpg"
     },
     {
       "id": "foxwhous",
@@ -47,7 +47,7 @@
       "publishedAt": "2026-10-22T03:22:48.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/debate.jpg"
+      "image": "media/stories/foxwhous.jpg"
     },
     {
       "id": "bbbuttons",
@@ -56,12 +56,12 @@
       "kicker": "TWO BUTTONS",
       "mockHeadline": "Michigan debate shrinks to a panel: America, or a vague menace overseas",
       "mockDek": "Breitbart heard a loyalty quiz and took dictation. \"Running for Senate\" did not fit on the button.",
-      "originalTitle": "Mike Rogers Presses El-Sayed in Final Michigan Senate Debate: ‘Are You for America' or 'Terrorist Groups Overseas?’",
+      "originalTitle": "Mike Rogers Presses El-Sayed in Final Michigan Senate Debate: \u2018Are You for America' or 'Terrorist Groups Overseas?\u2019",
       "url": "https://www.breitbart.com/politics/2026/10/21/rogers-presses-el-sayed-michigan-debate-america-or-terrorist-groups-overseas/",
       "publishedAt": "2026-10-22T03:20:39.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/debate.jpg"
+      "image": "media/stories/bbbuttons.jpg"
     },
     {
       "id": "gwcaption",
@@ -70,12 +70,12 @@
       "kicker": "CAPTION BOX",
       "mockHeadline": "A heckler gets reviewed for looks, then a punch gets a highlight reel",
       "mockDek": "The Gateway Pundit covers a rally scuffle like a boxing undercard, complete with a note on the face. The joke is the caption.",
-      "originalTitle": "“Really Unattractive” Leftist Gets Clocked After Screaming at Trump at Rally – Trump Calls Supporter “Evander ‘The Real Deal’ Holyfield” – CROWD ROARS! (VIDEO)",
+      "originalTitle": "\u201cReally Unattractive\u201d Leftist Gets Clocked After Screaming at Trump at Rally \u2013 Trump Calls Supporter \u201cEvander \u2018The Real Deal\u2019 Holyfield\u201d \u2013 CROWD ROARS! (VIDEO)",
       "url": "https://www.thegatewaypundit.com/2026/10/really-unattractive-leftist-gets-clocked-after-screaming-trump/",
       "publishedAt": "2026-10-22T03:20:17.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/rally.jpg"
+      "image": "media/stories/gwcaption.jpg"
     },
     {
       "id": "exaddress",
@@ -89,7 +89,7 @@
       "publishedAt": "2026-10-22T03:03:24.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/court.jpg"
+      "image": "media/stories/exaddress.jpg"
     },
     {
       "id": "bbsayline",
@@ -98,12 +98,12 @@
       "kicker": "SAY THE LINE",
       "mockHeadline": "Candidate calls a voting bill suppression. The desk faints on time.",
       "mockDek": "Breitbart prints the flinch as the story. The machinery of the bill can wait until the outrage is plated.",
-      "originalTitle": "Michigan Debate: El-Sayed Claims SAVE America Act ‘About Voter Suppression’",
+      "originalTitle": "Michigan Debate: El-Sayed Claims SAVE America Act \u2018About Voter Suppression\u2019",
       "url": "https://www.breitbart.com/politics/2026/10/21/michigan-debate-el-sayed-claims-save-america-act-voter-suppression/",
       "publishedAt": "2026-10-22T02:55:11.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/flag.jpg"
+      "image": "media/stories/bbsayline.jpg"
     },
     {
       "id": "foxghost",
@@ -117,7 +117,7 @@
       "publishedAt": "2026-10-22T02:52:48.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/court.jpg"
+      "image": "media/stories/foxghost.jpg"
     },
     {
       "id": "foxoffscreen",
@@ -131,7 +131,7 @@
       "publishedAt": "2026-10-22T02:51:58.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/debate.jpg"
+      "image": "media/stories/foxoffscreen.jpg"
     },
     {
       "id": "exneedle",
@@ -145,7 +145,7 @@
       "publishedAt": "2026-10-22T02:37:12.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/capitol.jpg"
+      "image": "media/stories/exneedle.jpg"
     },
     {
       "id": "pjpregame",
@@ -154,12 +154,12 @@
       "kicker": "PREGAME",
       "mockHeadline": "France is in the streets. The stake, on this desk, is the NFL pregame.",
       "mockDek": "PJ Media looks at unrest and finds a Sunday broadcast. The camera truck's travel plans become the American angle.",
-      "originalTitle": "Riots Across France Scare Off American Media Covering Sunday’s NFL Game in Paris",
+      "originalTitle": "Riots Across France Scare Off American Media Covering Sunday\u2019s NFL Game in Paris",
       "url": "https://pjmedia.com/tim-o-brien/2026/10/21/riots-across-france-scare-off-american-media-covering-sundays-nfl-game-in-paris-n4958554",
       "publishedAt": "2026-10-22T02:30:28.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/city.jpg"
+      "image": "media/stories/pjpregame.jpg"
     },
     {
       "id": "exmatches",
@@ -168,12 +168,12 @@
       "kicker": "MATCHES",
       "mockHeadline": "The rally brings the line. The headline brings the can of gasoline.",
       "mockDek": "The Washington Examiner gives \"burn it all down\" a full shift in South Carolina. The Senate candidate being boosted shows up, eventually.",
-      "originalTitle": "Trump warns Democrats ‘want to burn it all down’ in South Carolina pitch",
+      "originalTitle": "Trump warns Democrats \u2018want to burn it all down\u2019 in South Carolina pitch",
       "url": "https://www.washingtonexaminer.com/news/campaigns/congressional/4775238/trump-south-carolina-rally-darline-graham/",
       "publishedAt": "2026-10-22T02:21:32.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/rally.jpg"
+      "image": "media/stories/exmatches.jpg"
     },
     {
       "id": "oannsnap",
@@ -187,7 +187,7 @@
       "publishedAt": "2026-10-22T01:20:35.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/court.jpg"
+      "image": "media/stories/oannsnap.jpg"
     },
     {
       "id": "nypheadtilt",
@@ -196,12 +196,12 @@
       "kicker": "HEAD TILT",
       "mockHeadline": "The Post scratches its head so a shrug can still lead the page",
       "mockDek": "\"Head-scratching\" is what you write when the quote dodges and the homepage still needs a temperature. The New York Post supplies the hand to the temple.",
-      "originalTitle": "Ilhan Omar gives head-scratching response when asked if she’s related to ex-husband in first interview since DC raid",
+      "originalTitle": "Ilhan Omar gives head-scratching response when asked if she\u2019s related to ex-husband in first interview since DC raid",
       "url": "https://nypost.com/2026/10/21/us-news/ilhan-omar-gives-head-scratching-response-when-asked-if-shes-related-to-ex-husband-in-first-interview-since-dc-raid/",
       "publishedAt": "2026-10-22T01:18:45.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/mic.jpg"
+      "image": "media/stories/nypheadtilt.jpg"
     },
     {
       "id": "bbcyber",
@@ -215,7 +215,7 @@
       "publishedAt": "2026-10-22T01:09:43.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/desk.jpg"
+      "image": "media/stories/bbcyber.jpg"
     },
     {
       "id": "wtshowdown",
@@ -229,7 +229,7 @@
       "publishedAt": "2026-10-22T00:08:01.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/debate.jpg"
+      "image": "media/stories/wtshowdown.jpg"
     },
     {
       "id": "blazepile",
@@ -243,7 +243,7 @@
       "publishedAt": "2026-10-21T23:00:00.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/debate.jpg"
+      "image": "media/stories/blazepile.jpg"
     },
     {
       "id": "blazesenior",
@@ -257,7 +257,7 @@
       "publishedAt": "2026-10-21T22:20:00.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/mic.jpg"
+      "image": "media/stories/blazesenior.jpg"
     },
     {
       "id": "dwstopwatch",
@@ -271,7 +271,7 @@
       "publishedAt": "2026-10-21T22:09:26.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/debate.jpg"
+      "image": "media/stories/dwstopwatch.jpg"
     },
     {
       "id": "fedcoat",
@@ -285,7 +285,7 @@
       "publishedAt": "2026-10-21T21:22:09.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/court.jpg"
+      "image": "media/stories/fedcoat.jpg"
     },
     {
       "id": "fedfour",
@@ -299,7 +299,7 @@
       "publishedAt": "2026-10-21T21:02:05.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/gavel.jpg"
+      "image": "media/stories/fedfour.jpg"
     },
     {
       "id": "nmseize",
@@ -313,7 +313,7 @@
       "publishedAt": "2026-10-21T20:50:25.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/gavel.jpg"
+      "image": "media/stories/nmseize.jpg"
     },
     {
       "id": "nrreminder",
@@ -327,7 +327,7 @@
       "publishedAt": "2026-10-21T19:13:29.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/court.jpg"
+      "image": "media/stories/nrreminder.jpg"
     },
     {
       "id": "jtnroll",
@@ -341,7 +341,7 @@
       "publishedAt": "2026-10-21T16:00:00.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/capitol.jpg"
+      "image": "media/stories/jtnroll.jpg"
     },
     {
       "id": "thlaugh",
@@ -355,7 +355,7 @@
       "publishedAt": "2026-10-21T10:50:00.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/mic.jpg"
+      "image": "media/stories/thlaugh.jpg"
     },
     {
       "id": "ravcaps",
@@ -369,7 +369,7 @@
       "publishedAt": "2026-10-08T19:31:32.000Z",
       "by": "FauxGrok",
       "model": "grok-4.7",
-      "image": "media/plates/mic.jpg"
+      "image": "media/stories/ravcaps.jpg"
     }
   ]
 }

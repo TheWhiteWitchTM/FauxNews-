@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FAUX NEWS — Breaking Mocks | Latest Headlines</title>
   <meta name="description" content="Satire. FauxGrok reads Fox News, Breitbart, Real America's Voice, Newsmax, OANN and the rest of the right-wing wires, then files a mocking version about once an hour. The original headline stays attached.">
-  <meta name="theme-color" content="#003366">
+  <meta name="theme-color" content="#c20017">
   <link rel="canonical" href="https://thewhitewitchtm.github.io/FauxNews-/">
   <meta property="og:title" content="FAUX NEWS">
   <meta property="og:description" content="Satire from the right-wing wires, rewritten hourly by FauxGrok.">
@@ -17,71 +17,134 @@
   <link rel="alternate" type="application/rss+xml" title="FAUX NEWS" href="feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;0,900;1,700;1,900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,700;0,900;1,700;1,900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
   <a class="skip" href="#desk">Skip to stories</a>
 
-  <div class="network">
-    <ul class="network-inner">
-      <li class="net-media">Faux Media</li>
-      <li class="is-active"><a href="./">Faux News</a></li>
-      <li><a href="#wires">Faux Business</a></li>
-      <li><a href="#opinion-band">Faux Nation</a></li>
-      <li><a href="#lineup">Faux Audio</a></li>
-      <li><a href="#desk">Faux Weather</a></li>
-      <li><a href="#lineup">Outmock</a></li>
-      <li class="net-parody"><a href="#fine">Parody</a></li>
-    </ul>
-  </div>
-
   <header class="site-header">
-    <div class="branding">
-      <a class="logo" href="./" aria-label="FAUX NEWS, parody channel">
-        <svg viewBox="0 0 96 96" aria-hidden="true">
-          <rect width="96" height="96" fill="#c20017"/>
-          <g fill="#fff" opacity="0.42">
-            <polygon points="48,96 4,-12 14,-12"/>
-            <polygon points="48,96 18,-12 28,-12"/>
-            <polygon points="48,96 32,-12 42,-12"/>
-            <polygon points="48,96 46,-12 56,-12"/>
-            <polygon points="48,96 60,-12 72,-12"/>
-            <polygon points="48,96 76,-12 90,-12"/>
-          </g>
-          <text class="logo-faux" x="48" y="46" text-anchor="middle">FAUX</text>
-          <text class="logo-news" x="48" y="68" text-anchor="middle">NEWS</text>
-        </svg>
-        <span class="current-time"><span id="clock">––:––</span> <span class="zone">ET</span></span>
-      </a>
+    <div class="network">
+      <ul class="network-inner">
+        <li class="net-media">Faux Media</li>
+        <li class="is-active"><a href="./">Faux News</a></li>
+        <li><a href="#wires">Faux Business</a></li>
+        <li><a href="#opinion-band">Faux Nation</a></li>
+        <li><a href="#lineup">Faux Audio</a></li>
+        <li><a href="#desk">Faux Weather</a></li>
+        <li><a href="#lineup">Outmock</a></li>
+        <li class="net-parody"><a href="#fine">Parody</a></li>
+      </ul>
     </div>
 
-    <div class="nav-row nav-row-upper">
-      <div class="inner">
-        <nav class="primary-nav" aria-label="Sections">
-          <ul>
-            <li><a href="#desk">U.S.</a></li>
-            <li><a href="#desk">Politics</a></li>
-            <li><a href="#wires">World</a></li>
-            <li><a href="#opinion-band">Opinion</a></li>
-            <li><a href="#wires">Media</a></li>
-            <li><a href="#lineup">Entertainment</a></li>
-            <li><a href="#lineup">Sports</a></li>
-            <li><a href="#fine">Lifestyle</a></li>
-          </ul>
-        </nav>
+    <div class="masthead">
+      <div class="masthead-inner">
+        <div class="brand">
+          <div class="beams" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <a class="logo" href="./" aria-label="FAUX NEWS, satire channel">
+            <span class="logo-faux">FAUX</span>
+            <span class="logo-news"><span>N</span><span>E</span><span>W</span><span>S</span></span>
+            <span class="logo-time"><span id="clock" class="js-clock">––:––</span> ET</span>
+          </a>
+        </div>
+        <div class="banner-copy">
+          <p class="banner-kicker"><span class="parody-badge">Parody</span> Satire &amp; Unbalanced</p>
+          <p class="banner-slogan">We Mock. You Decide.</p>
+        </div>
+        <div class="banner-live">
+          <p class="banner-clock"><span class="js-clock">––:––</span> <span class="zone">ET</span></p>
+          <p class="banner-onair"><span class="live-dot" aria-hidden="true"></span> On air</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-menu" aria-label="Sections">
+      <div class="menu-inner">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="section-menu">
+          <span class="burger" aria-hidden="true"></span>
+          <span class="menu-toggle-label">Menu</span>
+        </button>
+        <ul id="section-menu">
+          <li class="menu-item">
+            <a class="nav-link" href="#desk">U.S.</a>
+            <ul class="dropdown">
+              <li><a href="#desk">Latest on the desk</a></li>
+              <li><a href="#desk">Crime graphic</a></li>
+              <li><a href="#desk">Border math</a></li>
+              <li><a href="#desk">Weather desk</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#desk">Politics</a>
+            <ul class="dropdown">
+              <li><a href="#desk">The hearing</a></li>
+              <li><a href="#desk">White House</a></li>
+              <li><a href="#wires">Campaign desk</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#wires">World</a>
+            <ul class="dropdown">
+              <li><a href="#wires">Wars and rumors</a></li>
+              <li><a href="#wires">Allies</a></li>
+              <li><a href="#wires">Maps with arrows</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#opinion-band">Opinion</a>
+            <ul class="dropdown">
+              <li><a href="#opinion-band">Opinion desk</a></li>
+              <li><a href="#lineup">The Five Excuses</a></li>
+              <li><a href="#lineup">The Echo</a></li>
+              <li><a href="#lineup">The Angle</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#wires">Media</a>
+            <ul class="dropdown">
+              <li><a href="#wires">The wires</a></li>
+              <li><a href="#wires">Latest headlines</a></li>
+              <li><a href="#fine">Other networks</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#lineup">Entertainment</a>
+            <ul class="dropdown">
+              <li><a href="#lineup">Primetime</a></li>
+              <li><a href="#lineup">Outmock</a></li>
+              <li><a href="#lineup">Celebrity panic</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#desk">Sports</a>
+            <ul class="dropdown">
+              <li><a href="#desk">Halftime takes</a></li>
+              <li><a href="#desk">Scores, ignored</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="#fine">Lifestyle</a>
+            <ul class="dropdown">
+              <li><a href="#fine">The fine print</a></li>
+              <li><a href="#fine">Parody desk</a></li>
+            </ul>
+          </li>
+        </ul>
         <div class="header-tools">
           <label class="search">
             <span class="sr-only">Search headlines</span>
             <input id="q" type="search" placeholder="Search" autocomplete="off">
           </label>
-          <a class="watch" href="#lineup">Watch</a>
+          <a class="watch" href="#lineup">Watch TV</a>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <div class="nav-row nav-row-lower">
-      <div class="inner">
+    <div class="topic-bar">
+      <div class="topic-inner">
         <a class="lower-home" href="./">Home</a>
         <span class="subnav-title">Hot Topics</span>
         <nav id="chips" aria-label="Filter by outlet"></nav>
@@ -212,7 +275,7 @@
   <footer class="site-footer" id="fine">
     <div class="footer-inner">
       <section>
-        <h2>Faux News</h2>
+        <h2 class="footer-logo">Faux <span>News</span></h2>
         <p class="foot-slogan">We mock. You already decided.</p>
         <p>FauxGrok reads the public right-wing wires about once an hour and files a joke beside the headline they actually ran. Model <span id="model-name">grok-4.7</span>.</p>
         <p class="foot-links"><a href="feed.xml">RSS</a> · <a href="https://github.com/TheWhiteWitchTM/FauxNews-">Source</a></p>
