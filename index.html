@@ -3,79 +3,231 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAUX NEWS — the right-wing wires, rewritten</title>
+  <title>FAUX NEWS — Breaking Mocks | Latest Headlines</title>
   <meta name="description" content="Satire. FauxGrok reads Fox News, Breitbart, Real America's Voice, Newsmax, OANN and the rest of the right-wing wires, then files a mocking version about once an hour. The original headline stays attached.">
-  <meta name="theme-color" content="#14110e">
+  <meta name="theme-color" content="#003366">
   <link rel="canonical" href="https://thewhitewitchtm.github.io/FauxNews-/">
   <meta property="og:title" content="FAUX NEWS">
   <meta property="og:description" content="Satire from the right-wing wires, rewritten hourly by FauxGrok.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thewhitewitchtm.github.io/FauxNews-/">
+  <meta property="og:image" content="https://thewhitewitchtm.github.io/FauxNews-/media/plates/capitol.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="FAUX NEWS" href="feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,450&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;0,900;1,700;1,900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <a class="skip" href="#desk">Skip to the desk</a>
-  <p class="banner">Satire. FauxGrok rewrites the right-wing wires. Nothing on this page is a report.</p>
-  <header class="mast">
-    <div class="mast-row">
-      <div class="brand">
-        <p class="eyebrow">Night edition · hourly</p>
-        <h1 class="wordmark">Faux <span>News</span></h1>
-        <p class="tag">We watch the outrage machine. Then we laugh at the chyron.</p>
-      </div>
-      <div class="edition">
-        <p class="stamp">Parody</p>
-        <p class="live"><span class="dot" aria-hidden="true"></span> FauxGrok is on the desk</p>
-        <p class="edition-meta" id="edition-meta">Checking the wires</p>
+  <a class="skip" href="#desk">Skip to stories</a>
+
+  <div class="network">
+    <ul class="network-inner">
+      <li class="net-media">Faux Media</li>
+      <li class="is-active"><a href="./">Faux News</a></li>
+      <li><a href="#wires">Faux Business</a></li>
+      <li><a href="#opinion-band">Faux Nation</a></li>
+      <li><a href="#lineup">Faux Audio</a></li>
+      <li><a href="#desk">Faux Weather</a></li>
+      <li><a href="#lineup">Outmock</a></li>
+      <li class="net-parody"><a href="#fine">Parody</a></li>
+    </ul>
+  </div>
+
+  <header class="site-header">
+    <div class="branding">
+      <a class="logo" href="./" aria-label="FAUX NEWS, parody channel">
+        <svg viewBox="0 0 96 96" aria-hidden="true">
+          <rect width="96" height="96" fill="#c20017"/>
+          <g fill="#fff" opacity="0.42">
+            <polygon points="48,96 4,-12 14,-12"/>
+            <polygon points="48,96 18,-12 28,-12"/>
+            <polygon points="48,96 32,-12 42,-12"/>
+            <polygon points="48,96 46,-12 56,-12"/>
+            <polygon points="48,96 60,-12 72,-12"/>
+            <polygon points="48,96 76,-12 90,-12"/>
+          </g>
+          <text class="logo-faux" x="48" y="46" text-anchor="middle">FAUX</text>
+          <text class="logo-news" x="48" y="68" text-anchor="middle">NEWS</text>
+        </svg>
+        <span class="current-time"><span id="clock">––:––</span> <span class="zone">ET</span></span>
+      </a>
+    </div>
+
+    <div class="nav-row nav-row-upper">
+      <div class="inner">
+        <nav class="primary-nav" aria-label="Sections">
+          <ul>
+            <li><a href="#desk">U.S.</a></li>
+            <li><a href="#desk">Politics</a></li>
+            <li><a href="#wires">World</a></li>
+            <li><a href="#opinion-band">Opinion</a></li>
+            <li><a href="#wires">Media</a></li>
+            <li><a href="#lineup">Entertainment</a></li>
+            <li><a href="#lineup">Sports</a></li>
+            <li><a href="#fine">Lifestyle</a></li>
+          </ul>
+        </nav>
+        <div class="header-tools">
+          <label class="search">
+            <span class="sr-only">Search headlines</span>
+            <input id="q" type="search" placeholder="Search" autocomplete="off">
+          </label>
+          <a class="watch" href="#lineup">Watch</a>
+        </div>
       </div>
     </div>
-    <div class="tools">
-      <label class="search">
-        <span class="search-label">Slug</span>
-        <input id="q" type="search" placeholder="Find a roast" autocomplete="off">
-      </label>
-      <nav class="chips" id="chips" aria-label="Desks"></nav>
+
+    <div class="nav-row nav-row-lower">
+      <div class="inner">
+        <a class="lower-home" href="./">Home</a>
+        <span class="subnav-title">Hot Topics</span>
+        <nav id="chips" aria-label="Filter by outlet"></nav>
+        <p class="markets"><span class="markets-label">Updated</span> <span id="edition-meta">Checking the wires</span></p>
+      </div>
     </div>
   </header>
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-label">Mocking</div>
-    <div class="ticker-window"><div class="ticker-track" id="ticker"></div></div>
-  </div>
-  <main id="desk" class="layout">
-    <div class="primary">
-      <p class="status" id="status" role="status"></p>
-      <article class="hero" id="hero"></article>
-      <section class="cards" id="cards" aria-label="More from the desk"></section>
+
+  <div class="breaking" id="breaking" hidden></div>
+
+  <div class="page">
+    <div class="region">
+      <main id="desk">
+        <nav class="section-front" aria-label="Front page">
+          <ul>
+            <li><a href="./" aria-current="page">Front Page</a></li>
+            <li><a href="#wires">Latest <span class="new-badge">New</span></a></li>
+            <li><a href="#opinion-band">Opinion</a></li>
+            <li><a href="#wires">Media</a></li>
+            <li><a href="#lineup">Primetime</a></li>
+          </ul>
+        </nav>
+
+        <div class="big-top" id="hero"></div>
+        <div class="thumbs" id="thumbs"></div>
+
+        <section class="collection collection-opinion" id="opinion-band">
+          <h2 class="opinion-heading">Opinion</h2>
+          <div class="opinion-row" id="opinion"></div>
+        </section>
+
+        <section class="collection" id="wires">
+          <div class="section-head">
+            <h2 id="wires-title">Latest News</h2>
+            <p class="status" id="status" role="status"></p>
+          </div>
+          <div class="cards" id="cards"></div>
+        </section>
+
+        <section class="collection collection-opinion" id="lineup">
+          <h2 class="opinion-heading">Primetime</h2>
+          <div class="shows">
+            <article class="show">
+              <div class="m">
+                <div class="still pack-0" aria-hidden="true"><p class="still-kicker">Five Excuses</p><p class="still-bug">FAUX</p></div>
+                <span class="kicker"><span class="kicker-text">5:00 PM</span></span>
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h3>The Five Excuses</h3>
+              <p>Five panelists discover they share one opinion and a graphic package.</p>
+            </article>
+            <article class="show">
+              <div class="m">
+                <div class="still pack-1" aria-hidden="true"><p class="still-kicker">Special Report</p><p class="still-bug">FAUX</p></div>
+                <span class="kicker"><span class="kicker-text">6:00 PM</span></span>
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h3>Special Report, Allegedly</h3>
+              <p>A calm voice reads the alert. The alert is doing the thinking.</p>
+            </article>
+            <article class="show">
+              <div class="m">
+                <div class="still pack-2" aria-hidden="true"><p class="still-kicker">Panic</p><p class="still-bug">FAUX</p></div>
+                <span class="kicker"><span class="kicker-text">7:00 PM</span></span>
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h3>Primetime Panic</h3>
+              <p>Tonight’s emergency, blocked, lit, and lower-thirded before dinner.</p>
+            </article>
+            <article class="show">
+              <div class="m">
+                <div class="still pack-3" aria-hidden="true"><p class="still-kicker">The Echo</p><p class="still-bug">FAUX</p></div>
+                <span class="kicker"><span class="kicker-text">8:00 PM</span></span>
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h3>The Echo</h3>
+              <p>The monologue files itself. The guest agrees with the monologue.</p>
+            </article>
+            <article class="show">
+              <div class="m">
+                <div class="still pack-4" aria-hidden="true"><p class="still-kicker">The Angle</p><p class="still-bug">FAUX</p></div>
+                <span class="kicker"><span class="kicker-text">9:00 PM</span></span>
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h3>The Angle</h3>
+              <p>A grievance, shot from the flattering side, with a flag pin.</p>
+            </article>
+            <article class="show">
+              <div class="m">
+                <div class="still pack-5" aria-hidden="true"><p class="still-kicker">Late Snark</p><p class="still-bug">FAUX</p></div>
+                <span class="kicker"><span class="kicker-text">10:00 PM</span></span>
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h3>Late Snark</h3>
+              <p>The jokes arrive already mad at a clip from this morning.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo-watch">
+          <a class="watch-still" href="#lineup">
+            <div class="still pack-live" aria-hidden="true">
+              <p class="still-kicker">Faux News</p>
+              <p class="still-source">Channel</p>
+              <p class="still-bug">FAUX</p>
+            </div>
+            <span class="on-now">On air now</span>
+          </a>
+          <a class="btn-watch" href="#lineup"><span class="play-mini" aria-hidden="true"></span> Watch Faux News Live</a>
+          <ul class="schedule">
+            <li><a href="#lineup"><span>The Five Excuses</span><small>5:00 PM</small></a></li>
+            <li><a href="#lineup"><span>Special Report, Allegedly</span><small>6:00 PM</small></a></li>
+            <li><a href="#lineup"><span>Primetime Panic</span><small>7:00 PM</small></a></li>
+            <li><a href="#lineup"><span>The Echo</span><small>8:00 PM</small></a></li>
+            <li><a href="#lineup"><span>The Angle</span><small>9:00 PM</small></a></li>
+            <li><a href="#lineup"><span>Late Snark</span><small>10:00 PM</small></a></li>
+          </ul>
+        </div>
+
+        <h2 class="side-head">Latest Headlines</h2>
+        <ol id="latest"></ol>
+      </aside>
     </div>
-    <aside class="rail">
-      <section class="panel bot">
-        <p class="panel-kicker">The bot</p>
-        <h2>FauxGrok</h2>
-        <p>Named for this desk. About once an hour it reads the public wires, hands the new headlines to Grok, and files a joke next to what they actually wrote.</p>
-        <dl>
-          <div><dt>Cadence</dt><dd>Hourly</dd></div>
-          <div><dt>Model</dt><dd id="model-name">grok-4.7</dd></div>
-          <div><dt>Job</dt><dd>Mock the framing</dd></div>
-        </dl>
+  </div>
+
+  <footer class="site-footer" id="fine">
+    <div class="footer-inner">
+      <section>
+        <h2>Faux News</h2>
+        <p class="foot-slogan">We mock. You already decided.</p>
+        <p>FauxGrok reads the public right-wing wires about once an hour and files a joke beside the headline they actually ran. Model <span id="model-name">grok-4.7</span>.</p>
+        <p class="foot-links"><a href="feed.xml">RSS</a> · <a href="https://github.com/TheWhiteWitchTM/FauxNews-">Source</a></p>
       </section>
-      <section class="panel">
-        <p class="panel-kicker">On the wires</p>
+      <section>
+        <h2>On the wires</h2>
         <ul class="sources" id="sources"></ul>
       </section>
-      <section class="panel fine">
-        <p>FAUX NEWS is not affiliated with Fox News, Breitbart, Real America's Voice, Newsmax, One America News, or any other outlet named here. “They wrote” is their headline. The rest is a joke. Follow the link for the real story.</p>
+      <section>
+        <h2>The fine print</h2>
+        <p>FAUX NEWS is an independent parody. It is not affiliated with Fox News, Breitbart, Real America’s Voice, Newsmax, One America News, or any other outlet named here. “They wrote” is their headline. The rest is a joke. The pictures are original parody stills, not photographs from those outlets. Follow the link for the real story.</p>
       </section>
-    </aside>
-  </main>
-  <footer class="colophon">
-    <p>FAUX NEWS · a parody wire · edited by FauxGrok</p>
-    <p><a href="feed.xml">RSS</a> · <a href="https://github.com/TheWhiteWitchTM/FauxNews-">Source</a></p>
+    </div>
   </footer>
+
   <script src="js/site.js" defer></script>
 </body>
 </html>

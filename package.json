@@ -6,7 +6,8 @@
     "update": "node scripts/update.mjs",
     "dry-run": "node scripts/update.mjs --dry-run",
     "self-test": "node scripts/update.mjs --self-test",
-    "rebuild-feed": "node scripts/update.mjs --rebuild-feed"
+    "rebuild-feed": "node scripts/update.mjs --rebuild-feed",
+    "stamp-images": "node scripts/update.mjs --stamp-images"
   },
   "license": "MIT"
 }

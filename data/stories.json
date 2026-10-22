@@ -18,7 +18,8 @@
       "url": "https://www.thegatewaypundit.com/2026/10/video-trump-responds-ilhan-omar-saying-not-my/",
       "publishedAt": "2026-10-22T04:20:32.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/mic.jpg"
     },
     {
       "id": "gwboomliar",
@@ -31,7 +32,8 @@
       "url": "https://www.thegatewaypundit.com/2026/10/boom-mike-rogers-calls-abdul-el-sayed-liar/",
       "publishedAt": "2026-10-22T03:40:39.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/mic.jpg"
     },
     {
       "id": "foxwhous",
@@ -44,7 +46,8 @@
       "url": "https://www.foxnews.com/politics/kansas-senate-rivals-distance-themselves-from-party-leaders-fiery-debate",
       "publishedAt": "2026-10-22T03:22:48.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/debate.jpg"
     },
     {
       "id": "bbbuttons",
@@ -57,7 +60,8 @@
       "url": "https://www.breitbart.com/politics/2026/10/21/rogers-presses-el-sayed-michigan-debate-america-or-terrorist-groups-overseas/",
       "publishedAt": "2026-10-22T03:20:39.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/debate.jpg"
     },
     {
       "id": "gwcaption",
@@ -70,7 +74,8 @@
       "url": "https://www.thegatewaypundit.com/2026/10/really-unattractive-leftist-gets-clocked-after-screaming-trump/",
       "publishedAt": "2026-10-22T03:20:17.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/rally.jpg"
     },
     {
       "id": "exaddress",
@@ -83,7 +88,8 @@
       "url": "https://www.washingtonexaminer.com/news/house/4775291/ilhan-omar-dc-apartment-federal-raid-death-threats/",
       "publishedAt": "2026-10-22T03:03:24.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/court.jpg"
     },
     {
       "id": "bbsayline",
@@ -96,7 +102,8 @@
       "url": "https://www.breitbart.com/politics/2026/10/21/michigan-debate-el-sayed-claims-save-america-act-voter-suppression/",
       "publishedAt": "2026-10-22T02:55:11.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/flag.jpg"
     },
     {
       "id": "foxghost",
@@ -109,7 +116,8 @@
       "url": "https://www.foxnews.com/politics/mass-firings-vow-sparks-clash-klobuchar-walz-fraud-legacy",
       "publishedAt": "2026-10-22T02:52:48.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/court.jpg"
     },
     {
       "id": "foxoffscreen",
@@ -122,7 +130,8 @@
       "url": "https://www.foxnews.com/politics/trump-dominates-el-sayeds-attacks-against-rogers-gop-rival-offers-unexpected-policy-split",
       "publishedAt": "2026-10-22T02:51:58.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/debate.jpg"
     },
     {
       "id": "exneedle",
@@ -135,7 +144,8 @@
       "url": "https://www.washingtonexaminer.com/daily-memo/4775284/is-it-too-late-to-move-the-midterm-needle-in-michigan/",
       "publishedAt": "2026-10-22T02:37:12.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/capitol.jpg"
     },
     {
       "id": "pjpregame",
@@ -148,7 +158,8 @@
       "url": "https://pjmedia.com/tim-o-brien/2026/10/21/riots-across-france-scare-off-american-media-covering-sundays-nfl-game-in-paris-n4958554",
       "publishedAt": "2026-10-22T02:30:28.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/city.jpg"
     },
     {
       "id": "exmatches",
@@ -161,7 +172,8 @@
       "url": "https://www.washingtonexaminer.com/news/campaigns/congressional/4775238/trump-south-carolina-rally-darline-graham/",
       "publishedAt": "2026-10-22T02:21:32.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/rally.jpg"
     },
     {
       "id": "oannsnap",
@@ -174,7 +186,8 @@
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTWsxTGhpVVhJU2dkdjBDZG54Tk9EMVludlJvSkgzVGFUdTRjUlk0QnZRNllkVFpOMG5yQ0c1OGZGNGVOSkFlZmR1ZUZJSXVSSFdjTENvYklsNlQwY3AyLVdFeHlZejVtMjRnUTMwUjlNOXBTTkN2LUlsdDdYMGZDT1FkV1Q1eklzc25iNkVUYlNBSTN3ZjMxMDU2R3BPdU44YmlUbG9lYUtadkNUM2U4clJfT1loZGNiSlp6ZEpjUUlEX3JNQ3NDaTZBSGRoTzQ1?oc=5",
       "publishedAt": "2026-10-22T01:20:35.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/court.jpg"
     },
     {
       "id": "nypheadtilt",
@@ -187,7 +200,8 @@
       "url": "https://nypost.com/2026/10/21/us-news/ilhan-omar-gives-head-scratching-response-when-asked-if-shes-related-to-ex-husband-in-first-interview-since-dc-raid/",
       "publishedAt": "2026-10-22T01:18:45.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/mic.jpg"
     },
     {
       "id": "bbcyber",
@@ -200,7 +214,8 @@
       "url": "https://www.breitbart.com/politics/2026/10/21/trump-at-roundtable-details-administrations-crackdown-on-cybercrime/",
       "publishedAt": "2026-10-22T01:09:43.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/desk.jpg"
     },
     {
       "id": "wtshowdown",
@@ -213,7 +228,8 @@
       "url": "https://www.washingtontimes.com/news/2026/oct/21/mike-rogers-questions-abdul-el-sayed-loyalty-us-final-michigan-debate/",
       "publishedAt": "2026-10-22T00:08:01.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/debate.jpg"
     },
     {
       "id": "blazepile",
@@ -226,7 +242,8 @@
       "url": "https://www.theblaze.com/shows/stu-and-dave-do-america/the-abdul-el-sayed-dirt-keeps-piling-up",
       "publishedAt": "2026-10-21T23:00:00.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/debate.jpg"
     },
     {
       "id": "blazesenior",
@@ -239,7 +256,8 @@
       "url": "https://www.theblaze.com/lifestyle/kenan-thompson-shane-gillis-snl",
       "publishedAt": "2026-10-21T22:20:00.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/mic.jpg"
     },
     {
       "id": "dwstopwatch",
@@ -252,7 +270,8 @@
       "url": "https://www.dailywire.com/news/mike-rogers-breaks-down-el-sayed-with-rapid-fire-list-of-lies-at-debate",
       "publishedAt": "2026-10-21T22:09:26.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/debate.jpg"
     },
     {
       "id": "fedcoat",
@@ -265,7 +284,8 @@
       "url": "https://thefederalist.com/2026/10/21/cia-spook-slotkin-doubles-down-on-threat-to-destroy-young-conservative-staffers/",
       "publishedAt": "2026-10-21T21:22:09.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/court.jpg"
     },
     {
       "id": "fedfour",
@@ -278,7 +298,8 @@
       "url": "https://thefederalist.com/2026/10/21/indiana-ag-illegal-alien-voted-in-4-federal-elections/",
       "publishedAt": "2026-10-21T21:02:05.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/gavel.jpg"
     },
     {
       "id": "nmseize",
@@ -291,7 +312,8 @@
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZ3pnYlg3YkprMkVtRHJnVlpzdms5U2tYLUtzUWtCTE42V3lpTWhNQ0lwbWdjUy1rcUdRTDEwdjJTWjcwby1mTVhCb3V1LVUzRUtNSW5VM2RrUTlaLUV0UldlY241bnRtM1pqRTU4MkRGYklIcHRfQlYwU2h2cVlJWFZFN1RDaGJYLXZRWGo5dEJIdw?oc=5",
       "publishedAt": "2026-10-21T20:50:25.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/gavel.jpg"
     },
     {
       "id": "nrreminder",
@@ -304,7 +326,8 @@
       "url": "https://www.nationalreview.com/2026/10/vivek-ramaswamy-reminds-voters-why-they-never-liked-him/",
       "publishedAt": "2026-10-21T19:13:29.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/court.jpg"
     },
     {
       "id": "jtnroll",
@@ -317,7 +340,8 @@
       "url": "https://justthenews.com/index.php/nation/states/center-square/us-house-committee-subpoenas-nj-sos-probes-66k-illegal-voter",
       "publishedAt": "2026-10-21T16:00:00.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/capitol.jpg"
     },
     {
       "id": "thlaugh",
@@ -330,7 +354,8 @@
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPdEZZOGdNU3JuM0EtVnpNVVNaQjFKM2d1YlhnVDlpamtZMllMT0VSYlN5TndZcGFXemNFbTR6Q2pBWnRNLWFtalBKeWJ1V3RoYWNmdUwtVGY2ekltVUVHSVNjNlY1YnJ2MnhFNWd3Q00tdVhkLVdIUEF2aDRHODBieWJ6TzlkR2gtNDJsNFpQTVZIRWlPNnJBMXFaeC14ZnUzUmRoNTBHNVZpR0NkU29WYmFWREQtUWpJdkNyUTdwLVF2dU5xdE5zUF8xdl81cjA2cENUaFhRMFY?oc=5",
       "publishedAt": "2026-10-21T10:50:00.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/mic.jpg"
     },
     {
       "id": "ravcaps",
@@ -343,7 +368,8 @@
       "url": "https://realamericasvoice.substack.com/p/exclusive-hegseth-speaks-out-from",
       "publishedAt": "2026-10-08T19:31:32.000Z",
       "by": "FauxGrok",
-      "model": "grok-4.7"
+      "model": "grok-4.7",
+      "image": "media/plates/mic.jpg"
     }
   ]
 }

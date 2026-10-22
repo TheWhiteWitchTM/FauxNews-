@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="3" fill="#14110e"/>
-  <path d="M8 6h16v4.2H13.2V14h8.2v3.6h-8.2V26H8V6z" fill="#f6f1e7"/>
-  <rect x="8" y="27.2" width="16" height="1.8" fill="#e10600"/>
+  <rect width="32" height="32" fill="#c20017"/>
+  <g fill="#fff" opacity="0.38">
+    <polygon points="16,34 1,-4 6,-4"/>
+    <polygon points="16,34 8,-4 12,-4"/>
+    <polygon points="16,34 14,-4 18,-4"/>
+    <polygon points="16,34 20,-4 25,-4"/>
+    <polygon points="16,34 26,-4 31,-4"/>
+  </g>
+  <text x="16" y="22" text-anchor="middle" fill="#fff" font-family="Arial Narrow, Impact, sans-serif" font-style="italic" font-weight="700" font-size="14">F</text>
 </svg>

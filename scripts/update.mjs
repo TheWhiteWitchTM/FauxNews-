@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { plateFor, PLATE_FILES } from "./plates.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://thewhitewitchtm.github.io/FauxNews-/";
@@ -330,15 +331,21 @@ async function gather() {
   return { existing, candidates };
 }
 
-async function writeDesk(stories) {
+function withArt(stories) {
+  return stories.map((story) => ({ ...story, image: plateFor(story) }));
+}
+
+async function writeDesk(stories, options = {}) {
+  const filed = withArt(stories);
+  const previous = options.touch === false ? await loadJson("data/stories.json", {}) : null;
   const payload = {
-    updatedAt: new Date().toISOString(),
+    updatedAt: options.touch === false ? (previous.updatedAt || new Date().toISOString()) : new Date().toISOString(),
     bot: { name: "FauxGrok", model: MODEL, cadence: "hourly" },
     satire: true,
-    stories,
+    stories: filed,
   };
   await writeFile(path.join(root, "data/stories.json"), `${JSON.stringify(payload, null, 2)}\n`);
-  await writeFile(path.join(root, "feed.xml"), buildFeed(stories));
+  await writeFile(path.join(root, "feed.xml"), buildFeed(filed));
 }
 
 function selfTest() {
@@ -364,6 +371,19 @@ function selfTest() {
     source: "Fox News",
   }]);
   if (!feed.includes("A &amp; B") || !feed.includes("They &lt;wrote&gt;")) throw new Error("feed escape failed");
+  const debate = plateFor({
+    id: "podium",
+    kicker: "PODIUM",
+    mockHeadline: "Two podiums",
+    mockDek: "A debate.",
+    originalTitle: "debate",
+  });
+  if (debate !== "media/plates/debate.jpg") throw new Error(`plate pick failed: ${debate}`);
+  const quiet = plateFor({ id: "quiet", kicker: "QUIET", mockHeadline: "Nothing topical", mockDek: "Just a joke.", originalTitle: "Hello" });
+  if (!PLATE_FILES.includes(quiet)) throw new Error(`plate fallback failed: ${quiet}`);
+  if (plateFor({ id: "quiet", kicker: "QUIET", mockHeadline: "Nothing topical", mockDek: "Just a joke.", originalTitle: "Hello" }) !== quiet) {
+    throw new Error("plate pick drifted");
+  }
   console.log("self-test ok");
 }
 
@@ -375,8 +395,14 @@ async function main() {
   }
   if (flags.has("--rebuild-feed")) {
     const existing = await loadJson("data/stories.json");
-    await writeFile(path.join(root, "feed.xml"), buildFeed(existing.stories || []));
+    await writeDesk(existing.stories || [], { touch: false });
     console.log(`feed rebuilt with ${(existing.stories || []).length} stories`);
+    return;
+  }
+  if (flags.has("--stamp-images")) {
+    const existing = await loadJson("data/stories.json");
+    await writeDesk(existing.stories || [], { touch: false });
+    console.log(`stills stamped on ${(existing.stories || []).length} stories`);
     return;
   }
   const { existing, candidates } = await gather();
