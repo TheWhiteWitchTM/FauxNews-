@@ -25,9 +25,9 @@ Open `http://127.0.0.1:8765`. A key comes from the [xAI console](https://console
 
 ## Put it on GitHub Pages
 
-The site is static. In the repo: **Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/ (root)` → Save.**
+The site is static. `.github/workflows/pages.yml` publishes `main` on every push.
 
-The parody front page then lives at:
+The parody front page lives at:
 
 https://thewhitewitchtm.github.io/FauxNews-/
 
