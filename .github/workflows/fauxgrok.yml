@@ -1,0 +1,41 @@
+name: FauxGrok
+
+on:
+  schedule:
+    # About hourly. GitHub may start a scheduled run a little late.
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fauxgrok-desk
+  cancel-in-progress: false
+
+jobs:
+  desk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Rewrite what the wires just filed
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: node scripts/update.mjs
+
+      - name: File the edition
+        run: |
+          git config user.name "FauxGrok"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stories.json feed.xml
+          if git diff --cached --quiet; then
+            echo "Desk unchanged."
+          else
+            git commit -m "FauxGrok: refresh the desk"
+            git push
+          fi

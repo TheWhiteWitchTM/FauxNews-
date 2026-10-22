@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAUX NEWS — the right-wing wires, rewritten</title>
+  <meta name="description" content="Satire. FauxGrok reads Fox News, Breitbart, Real America's Voice, Newsmax, OANN and the rest of the right-wing wires, then files a mocking version about once an hour. The original headline stays attached.">
+  <meta name="theme-color" content="#14110e">
+  <link rel="canonical" href="https://thewhitewitchtm.github.io/FauxNews-/">
+  <meta property="og:title" content="FAUX NEWS">
+  <meta property="og:description" content="Satire from the right-wing wires, rewritten hourly by FauxGrok.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thewhitewitchtm.github.io/FauxNews-/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="FAUX NEWS" href="feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,450&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#desk">Skip to the desk</a>
+  <p class="banner">Satire. FauxGrok rewrites the right-wing wires. Nothing on this page is a report.</p>
+  <header class="mast">
+    <div class="mast-row">
+      <div class="brand">
+        <p class="eyebrow">Night edition · hourly</p>
+        <h1 class="wordmark">Faux <span>News</span></h1>
+        <p class="tag">We watch the outrage machine. Then we laugh at the chyron.</p>
+      </div>
+      <div class="edition">
+        <p class="stamp">Parody</p>
+        <p class="live"><span class="dot" aria-hidden="true"></span> FauxGrok is on the desk</p>
+        <p class="edition-meta" id="edition-meta">Checking the wires</p>
+      </div>
+    </div>
+    <div class="tools">
+      <label class="search">
+        <span class="search-label">Slug</span>
+        <input id="q" type="search" placeholder="Find a roast" autocomplete="off">
+      </label>
+      <nav class="chips" id="chips" aria-label="Desks"></nav>
+    </div>
+  </header>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-label">Mocking</div>
+    <div class="ticker-window"><div class="ticker-track" id="ticker"></div></div>
+  </div>
+  <main id="desk" class="layout">
+    <div class="primary">
+      <p class="status" id="status" role="status"></p>
+      <article class="hero" id="hero"></article>
+      <section class="cards" id="cards" aria-label="More from the desk"></section>
+    </div>
+    <aside class="rail">
+      <section class="panel bot">
+        <p class="panel-kicker">The bot</p>
+        <h2>FauxGrok</h2>
+        <p>Named for this desk. About once an hour it reads the public wires, hands the new headlines to Grok, and files a joke next to what they actually wrote.</p>
+        <dl>
+          <div><dt>Cadence</dt><dd>Hourly</dd></div>
+          <div><dt>Model</dt><dd id="model-name">grok-4.7</dd></div>
+          <div><dt>Job</dt><dd>Mock the framing</dd></div>
+        </dl>
+      </section>
+      <section class="panel">
+        <p class="panel-kicker">On the wires</p>
+        <ul class="sources" id="sources"></ul>
+      </section>
+      <section class="panel fine">
+        <p>FAUX NEWS is not affiliated with Fox News, Breitbart, Real America's Voice, Newsmax, One America News, or any other outlet named here. “They wrote” is their headline. The rest is a joke. Follow the link for the real story.</p>
+      </section>
+    </aside>
+  </main>
+  <footer class="colophon">
+    <p>FAUX NEWS · a parody wire · edited by FauxGrok</p>
+    <p><a href="feed.xml">RSS</a> · <a href="https://github.com/TheWhiteWitchTM/FauxNews-">Source</a></p>
+  </footer>
+  <script src="js/site.js" defer></script>
+</body>
+</html>

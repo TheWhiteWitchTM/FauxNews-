@@ -1,0 +1,12 @@
+{
+  "name": "fauxnews",
+  "private": true,
+  "description": "FAUX NEWS, a satire desk. FauxGrok rewrites right-wing wires about once an hour.",
+  "scripts": {
+    "update": "node scripts/update.mjs",
+    "dry-run": "node scripts/update.mjs --dry-run",
+    "self-test": "node scripts/update.mjs --self-test",
+    "rebuild-feed": "node scripts/update.mjs --rebuild-feed"
+  },
+  "license": "MIT"
+}

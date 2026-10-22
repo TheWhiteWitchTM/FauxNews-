@@ -1,0 +1,158 @@
+[
+  {
+    "id": "fox",
+    "name": "Fox News",
+    "short": "FOX",
+    "color": "#9f1239",
+    "site": "https://www.foxnews.com/politics",
+    "feeds": ["https://moxie.foxnews.com/google-publisher/politics.xml"],
+    "titleSuffixes": ["Fox News"]
+  },
+  {
+    "id": "breitbart",
+    "name": "Breitbart",
+    "short": "BB",
+    "color": "#c2410c",
+    "site": "https://www.breitbart.com",
+    "feeds": ["https://feeds.feedburner.com/breitbart"],
+    "titleSuffixes": ["Breitbart"]
+  },
+  {
+    "id": "rav",
+    "name": "Real America's Voice",
+    "short": "RAV",
+    "color": "#b45309",
+    "site": "https://americasvoice.news",
+    "feeds": [
+      "https://realamericasvoice.substack.com/feed",
+      "https://news.google.com/rss/search?q=site:americasvoice.news+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "titleSuffixes": ["Real America's Voice", "Real America's Voice News", "Real Americas Voice"]
+  },
+  {
+    "id": "jtn",
+    "name": "Just the News",
+    "short": "JTN",
+    "color": "#0f766e",
+    "site": "https://justthenews.com",
+    "feeds": ["https://justthenews.com/rss.xml"],
+    "titleSuffixes": ["Just the News", "Just The News"],
+    "note": "The written wire Real America's Voice points viewers to."
+  },
+  {
+    "id": "newsmax",
+    "name": "Newsmax",
+    "short": "NMAX",
+    "color": "#1e3a8a",
+    "site": "https://www.newsmax.com",
+    "feeds": ["https://www.newsmax.com/rss/Newsfront/16"],
+    "fallbackFeeds": [
+      "https://news.google.com/rss/search?q=site:newsmax.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "titleSuffixes": ["Newsmax"]
+  },
+  {
+    "id": "oann",
+    "name": "One America News",
+    "short": "OANN",
+    "color": "#854d0e",
+    "site": "https://www.oann.com",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:oann.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "titleSuffixes": ["One America News Network", "One America News", "OAN", "OANN"],
+    "note": "oann.com answers bot fetches with 403, so FauxGrok reads the public Google News wire for the site."
+  },
+  {
+    "id": "dailywire",
+    "name": "The Daily Wire",
+    "short": "DW",
+    "color": "#18181b",
+    "site": "https://www.dailywire.com",
+    "feeds": ["https://www.dailywire.com/feeds/rss.xml"],
+    "titleSuffixes": ["The Daily Wire", "Daily Wire"]
+  },
+  {
+    "id": "blaze",
+    "name": "The Blaze",
+    "short": "BLAZE",
+    "color": "#dc2626",
+    "site": "https://www.theblaze.com",
+    "feeds": ["https://www.theblaze.com/feeds/feed.rss"],
+    "titleSuffixes": ["The Blaze", "Blaze"]
+  },
+  {
+    "id": "federalist",
+    "name": "The Federalist",
+    "short": "FED",
+    "color": "#14532d",
+    "site": "https://thefederalist.com",
+    "feeds": ["https://thefederalist.com/feed/"],
+    "titleSuffixes": ["The Federalist"]
+  },
+  {
+    "id": "examiner",
+    "name": "Washington Examiner",
+    "short": "EXAM",
+    "color": "#7f1d1d",
+    "site": "https://www.washingtonexaminer.com",
+    "feeds": ["https://www.washingtonexaminer.com/feed"],
+    "titleSuffixes": ["Washington Examiner"]
+  },
+  {
+    "id": "gateway",
+    "name": "The Gateway Pundit",
+    "short": "GATE",
+    "color": "#6b21a8",
+    "site": "https://www.thegatewaypundit.com",
+    "feeds": ["https://www.thegatewaypundit.com/feed/"],
+    "titleSuffixes": ["The Gateway Pundit", "Gateway Pundit"]
+  },
+  {
+    "id": "washtimes",
+    "name": "Washington Times",
+    "short": "WT",
+    "color": "#1e3a5f",
+    "site": "https://www.washingtontimes.com",
+    "feeds": ["https://www.washingtontimes.com/rss/headlines/news/politics/"],
+    "titleSuffixes": ["The Washington Times", "Washington Times"]
+  },
+  {
+    "id": "nypost",
+    "name": "New York Post",
+    "short": "NYP",
+    "color": "#be123c",
+    "site": "https://nypost.com/politics/",
+    "feeds": ["https://nypost.com/politics/feed/"],
+    "titleSuffixes": ["New York Post", "NY Post"]
+  },
+  {
+    "id": "townhall",
+    "name": "Townhall",
+    "short": "TH",
+    "color": "#3f6212",
+    "site": "https://townhall.com",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:townhall.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "titleSuffixes": ["Townhall"]
+  },
+  {
+    "id": "nr",
+    "name": "National Review",
+    "short": "NR",
+    "color": "#334155",
+    "site": "https://www.nationalreview.com",
+    "feeds": ["https://www.nationalreview.com/feed/"],
+    "titleSuffixes": ["National Review"]
+  },
+  {
+    "id": "pj",
+    "name": "PJ Media",
+    "short": "PJ",
+    "color": "#0369a1",
+    "site": "https://pjmedia.com",
+    "feeds": ["https://pjmedia.com/feed"],
+    "titleSuffixes": ["PJ Media"]
+  }
+]
