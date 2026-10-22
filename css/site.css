@@ -133,18 +133,16 @@ h1, h2, h3, p { margin: 0; }
 .network .net-parody a { color: #ff4d5e; }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 50;
   background: #c20017;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
 }
 
 #desk,
 #wires,
 #opinion-band,
 #lineup,
-#fine { scroll-margin-top: 320px; }
+#fine { scroll-margin-top: 96px; }
 
 .masthead {
   background: linear-gradient(90deg, #a30014 0%, #c20017 38%, #d10f22 100%);
@@ -155,10 +153,10 @@ h1, h2, h3, p { margin: 0; }
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 22px 48px;
+  gap: 8px 16px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 16px 28px;
+  padding: 8px 16px;
 }
 
 .brand {
@@ -167,10 +165,10 @@ h1, h2, h3, p { margin: 0; }
   justify-self: start;
   width: max-content;
   max-width: 100%;
-  padding: 12px 20px 0;
+  padding: 3px 8px 0;
   background: #9d0012;
-  border: 3px solid #fff;
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.28);
+  border: 2px solid #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
@@ -224,7 +222,7 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .logo-faux {
-  font-size: 86px;
+  font-size: 34px;
   line-height: 0.76;
   letter-spacing: -0.03em;
   text-align: center;
@@ -234,30 +232,30 @@ h1, h2, h3, p { margin: 0; }
 .logo-news {
   display: flex;
   justify-content: space-between;
-  margin-top: 4px;
-  padding: 3px 8px 0;
-  border-top: 2px solid #fff;
-  font-size: 22px;
+  margin-top: 1px;
+  padding: 1px 3px 0;
+  border-top: 1px solid #fff;
+  font-size: 12px;
   font-weight: 800;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 .logo-time {
   position: relative;
   z-index: 1;
-  margin: 8px -20px 0;
+  margin: 2px -8px 0;
   background: rgba(0, 0, 0, 0.28);
   color: #fff;
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   text-align: center;
   text-transform: uppercase;
-  line-height: 24px;
-  height: 24px;
+  line-height: 16px;
+  height: 16px;
 }
 
 .banner-copy { min-width: 0; }
@@ -265,15 +263,17 @@ h1, h2, h3, p { margin: 0; }
 .banner-kicker {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
+  gap: 8px;
+  margin-bottom: 1px;
   color: #fff;
   font-family: "Liberation Serif", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: 0.01em;
   line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .parody-badge {
@@ -294,9 +294,12 @@ h1, h2, h3, p { margin: 0; }
   font-family: "Barlow Condensed", "Fira Sans Condensed", "Arial Narrow", sans-serif;
   font-style: italic;
   font-weight: 800;
-  font-size: clamp(28px, 2.6vw, 40px);
+  font-size: clamp(16px, 1.6vw, 26px);
   letter-spacing: -0.02em;
   line-height: 0.95;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .banner-live { text-align: right; }
@@ -304,7 +307,7 @@ h1, h2, h3, p { margin: 0; }
 .banner-clock {
   font-family: "Barlow Condensed", "Fira Sans Condensed", "Arial Narrow", sans-serif;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: 0.02em;
   line-height: 0.9;
   white-space: nowrap;
@@ -318,11 +321,11 @@ h1, h2, h3, p { margin: 0; }
 .banner-onair {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  font-size: 13px;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -333,6 +336,13 @@ h1, h2, h3, p { margin: 0; }
   background: #fff;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
   animation: pulse 1.4s ease-out infinite;
+}
+
+.sticky-chrome {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .main-menu {
@@ -346,7 +356,7 @@ h1, h2, h3, p { margin: 0; }
   align-items: stretch;
   gap: 8px;
   max-width: 1440px;
-  min-height: 54px;
+  min-height: 44px;
   margin: 0 auto;
   padding: 0 16px 0 8px;
 }
@@ -509,7 +519,7 @@ h1, h2, h3, p { margin: 0; }
   align-items: center;
   gap: 14px;
   max-width: 1440px;
-  min-height: 48px;
+  min-height: 40px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -660,34 +670,17 @@ h1, h2, h3, p { margin: 0; }
 }
 
 @media (max-width: 1100px) {
-  .masthead-inner {
-    grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 10px;
-    padding: 14px 14px 16px;
-  }
-
   .banner-live { display: none; }
 
-  .logo-faux { font-size: 72px; }
+  .masthead-inner { padding: 6px 12px; }
 
-  .logo-news { font-size: 16px; padding-top: 2px; }
+  .logo-faux { font-size: 30px; }
 
-  .banner-kicker { font-size: 16px; }
+  .banner-kicker { font-size: 13px; }
 
-  .banner-slogan { font-size: 26px; }
-
-  .banner-clock { font-size: 28px; }
-
-  .banner-onair { letter-spacing: 0.1em; }
+  .banner-slogan { font-size: 18px; }
 
   .search input { width: 112px; }
-
-  #desk,
-  #wires,
-  #opinion-band,
-  #lineup,
-  #fine { scroll-margin-top: 440px; }
 }
 
 
@@ -1501,6 +1494,7 @@ main {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+  max-height: min(42vh, 420px);
   object-fit: cover;
   background: #021426;
 }
@@ -1578,7 +1572,13 @@ main {
 
 @media (max-width: 1180px) {
   .story-1 { grid-template-columns: 1fr; }
+  .story-1 .m {
+    aspect-ratio: auto;
+    height: clamp(140px, 22vh, 200px);
+  }
   .story-1 .hed { font-size: 32px; margin-top: 12px; }
+  .story-1 .still { padding-bottom: 48px; }
+  .story-1 .kicker-text { font-size: 22px; padding: 4px 0; }
   .opinion-row { grid-template-columns: 1fr 1fr; }
   .search input { width: 120px; }
 }
