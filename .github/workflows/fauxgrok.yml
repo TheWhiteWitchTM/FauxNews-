@@ -1,9 +1,8 @@
 name: FauxGrok
 
 on:
-  schedule:
-    # About hourly. GitHub may start a scheduled run a little late.
-    - cron: "17 * * * *"
+  # The clock is the machine. Noon and 8pm US Eastern, from scripts/fauxgrok.sh.
+  # This button is the manual pass. It still files posts only.
   workflow_dispatch:
 
 permissions:

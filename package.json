@@ -1,7 +1,7 @@
 {
   "name": "fauxnews",
   "private": true,
-  "description": "FAUX NEWS, a satire desk. FauxGrok rewrites right-wing wires about once an hour.",
+  "description": "FAUX NEWS, a satire desk. FauxGrok rewrites right-wing wires at noon and 8pm US Eastern.",
   "scripts": {
     "update": "node scripts/update.mjs",
     "dry-run": "node scripts/update.mjs --dry-run",

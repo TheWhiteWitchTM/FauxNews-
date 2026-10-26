@@ -1,4 +1,6 @@
+import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -211,33 +213,64 @@ function responseText(payload) {
   throw new Error("model response had no text");
 }
 
-async function callGrok(items) {
-  const key = process.env.XAI_API_KEY;
-  if (!key) {
-    const message = "XAI_API_KEY is not set. FauxGrok left the desk unchanged.";
-    if (process.env.GITHUB_ACTIONS) console.log(`::warning title=FauxGrok::${message}`);
-    console.error(message);
-    return null;
-  }
-  const prompt = `${SYSTEM}\n\nITEMS:\n${JSON.stringify(items.map((item) => ({
+const JOKE_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    stories: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          url: { type: "string" },
+          kicker: { type: "string" },
+          mockHeadline: { type: "string" },
+          mockDek: { type: "string" },
+        },
+        required: ["url", "kicker", "mockHeadline", "mockDek"],
+      },
+    },
+  },
+  required: ["stories"],
+};
+
+function jokePrompt(items) {
+  return `${SYSTEM}\n\nITEMS:\n${JSON.stringify(items.map((item) => ({
     url: item.url,
     outlet: item.source,
     headline: item.originalTitle,
   })))}`;
-  const response = await fetch("https://api.x.ai/v1/responses", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ model: MODEL, input: prompt }),
-    signal: AbortSignal.timeout(90000),
-  });
-  const body = await response.text();
-  if (!response.ok) {
-    throw new Error(`Grok ${response.status}: ${body.slice(0, 400)}`);
+}
+
+export function parseGrokStdout(stdout) {
+  const text = String(stdout || "").trim();
+  if (!text) throw new Error("model did not return JSON");
+  try {
+    return JSON.parse(text);
+  } catch {
+    const lines = text.split("\n").map((line) => line.trim()).filter(Boolean);
+    for (let i = lines.length - 1; i >= 0; i -= 1) {
+      if (!lines[i].startsWith("{")) continue;
+      try {
+        return JSON.parse(lines[i]);
+      } catch {
+        // A log line can start with a brace. Keep scanning.
+      }
+    }
   }
-  const parsed = extractJson(responseText(JSON.parse(body)));
+  throw new Error("model did not return JSON");
+}
+
+export function jokesFromModel(payload) {
+  if (!payload || typeof payload !== "object") throw new Error("model did not return JSON");
+  const structured = payload.structured_output || payload.structuredOutput;
+  if (structured && typeof structured === "object") return structured;
+  if (typeof payload.text === "string" && payload.text.trim()) return extractJson(payload.text);
+  throw new Error("model did not return JSON");
+}
+
+function acceptStories(items, parsed) {
   const rows = Array.isArray(parsed.stories) ? parsed.stories : [];
   const byUrl = new Map(rows.map((row) => [row.url, row]));
   const accepted = [];
@@ -263,6 +296,75 @@ async function callGrok(items) {
   }
   if (!accepted.length) throw new Error("Grok returned nothing FauxGrok can print");
   return accepted;
+}
+
+function runFile(cmd, args, timeout) {
+  return new Promise((resolve, reject) => {
+    execFile(cmd, args, {
+      timeout,
+      maxBuffer: 2_000_000,
+      cwd: "/tmp",
+      env: { ...process.env, GROK_WORKFLOWS: "0" },
+    }, (error, stdout, stderr) => {
+      if (error) {
+        const extra = String(stderr || error.message || "").replace(/\s+/g, " ").trim().slice(0, 400);
+        reject(new Error(extra || "Grok did not answer"));
+        return;
+      }
+      resolve(String(stdout || ""));
+    });
+  });
+}
+
+async function callGrokApi(items) {
+  const key = process.env.XAI_API_KEY;
+  const response = await fetch("https://api.x.ai/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${key}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ model: MODEL, input: jokePrompt(items) }),
+    signal: AbortSignal.timeout(90000),
+  });
+  const body = await response.text();
+  if (!response.ok) throw new Error(`Grok ${response.status}: ${body.slice(0, 400)}`);
+  return acceptStories(items, extractJson(responseText(JSON.parse(body))));
+}
+
+async function callGrokCli(items) {
+  const bin = process.env.GROK_BIN || "/home/andreas/.grok/bin/grok";
+  if (!existsSync(bin)) throw new Error("Grok is not on this machine. The desk was left unchanged.");
+  const stdout = await runFile(bin, [
+    "--cwd", "/tmp",
+    "--verbatim",
+    "--no-auto-update",
+    "--no-subagents",
+    "--disable-web-search",
+    "--max-turns", "1",
+    "--effort", "low",
+    "--output-format", "json",
+    "--json-schema", JSON.stringify(JOKE_SCHEMA),
+    "--disallowed-tools", [
+      "write", "search_replace", "run_terminal_cmd", "run_terminal_command",
+      "web_search", "web_fetch", "image_gen", "image_edit", "read_file", "grep",
+      "list_dir", "Agent", "task", "spawn_subagent",
+    ].join(","),
+    "-m", MODEL,
+    "-p", jokePrompt(items),
+  ], 120000);
+  return acceptStories(items, jokesFromModel(parseGrokStdout(stdout)));
+}
+
+async function callGrok(items) {
+  if (process.env.XAI_API_KEY) return callGrokApi(items);
+  if (process.env.GITHUB_ACTIONS) {
+    const message = "XAI_API_KEY is not set. FauxGrok left the desk unchanged.";
+    console.log(`::warning title=FauxGrok::${message}`);
+    console.error(message);
+    return null;
+  }
+  return callGrokCli(items);
 }
 
 export function buildFeed(stories) {
@@ -345,7 +447,7 @@ async function writeDesk(stories, options = {}) {
   const previous = options.touch === false ? await loadJson("data/stories.json", {}) : null;
   const payload = {
     updatedAt: options.touch === false ? (previous.updatedAt || new Date().toISOString()) : new Date().toISOString(),
-    bot: { name: "FauxGrok", model: MODEL, cadence: "hourly" },
+    bot: { name: "FauxGrok", model: MODEL, cadence: "noon and 8pm US Eastern" },
     satire: true,
     stories: filed,
   };
@@ -400,6 +502,11 @@ function selfTest() {
   if (kept[0].image !== "media/stories/quiet.jpg") throw new Error("custom still overwritten");
   const stamped = withArt([{ id: "podium", kicker: "PODIUM", mockHeadline: "Two podiums", mockDek: "A debate.", originalTitle: "debate" }]);
   if (stamped[0].image !== "media/plates/debate.jpg") throw new Error(`stamp failed: ${stamped[0].image}`);
+  const wrapped = parseGrokStdout('noise\n{"text":"{\\"stories\\":[]}","structured_output":{"stories":[{"url":"https://example.com/a"}]}}\n');
+  const jokes = jokesFromModel(wrapped);
+  if (jokes.stories[0].url !== "https://example.com/a") throw new Error("structured jokes missed");
+  const fromText = jokesFromModel({ text: '{"stories":[{"url":"https://example.com/b"}]}' });
+  if (fromText.stories[0].url !== "https://example.com/b") throw new Error("text jokes missed");
   console.log("self-test ok");
 }
 
